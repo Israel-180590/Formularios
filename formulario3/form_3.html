@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03 · Formulario Infantil Gamificado 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style_f3.css" />
+</head>
+
+<body>
+
+    <nav class="barra-superior">
+        <a href="../index.html" class="boton-volver">← Volver a la colección</a>
+        <span class="etiqueta-estilo">03 · CLAYMORPHISM 3D</span>
+    </nav>
+
+    <main class="tarjeta-arcilla">
+        <header class="cabecera-infantil">
+            <span class="insignia-campamento">🚀 CAMPAMENTO CREATIVO 2026</span>
+            <h1>¡Únete a la Aventura!</h1>
+            <p>Elige tu mascota compañera, dinos tu nombre y prepárate para crear cosas increíbles.</p>
+        </header>
+
+        <form id="formulario-infantil" class="formulario-jugueton">
+            <!-- Selector visual de mascota (Radio buttons estilizados en 3D) -->
+            <fieldset class="selector-mascotas">
+                <legend>1. Elige tu mascota compañera *</legend>
+
+                <label class="tarjeta-mascota">
+                    <input type="radio" name="mascota" value="Zorro Espacial 🦊" checked />
+                    <span class="contenido-mascota">
+                        <strong class="emoji">🦊</strong>
+                        <span>Zorro</span>
+                    </span>
+                </label>
+
+                <label class="tarjeta-mascota">
+                    <input type="radio" name="mascota" value="Panda Inventor 🐼" />
+                    <span class="contenido-mascota">
+                        <strong class="emoji">🐼</strong>
+                        <span>Panda</span>
+                    </span>
+                </label>
+
+                <label class="tarjeta-mascota">
+                    <input type="radio" name="mascota" value="Unicornio Mágico 🦄" />
+                    <span class="contenido-mascota">
+                        <strong class="emoji">🦄</strong>
+                        <span>Unicornio</span>
+                    </span>
+                </label>
+
+                <label class="tarjeta-mascota">
+                    <input type="radio" name="mascota" value="Dino Explorador 🦖" />
+                    <span class="contenido-mascota">
+                        <strong class="emoji">🦖</strong>
+                        <span>Dino</span>
+                    </span>
+                </label>
+            </fieldset>
+
+            <!-- Nombre y Edad -->
+            <fieldset class="fila-doble">
+                <label class="campo-arcilla">
+                    <span>2. ¿Cómo te llamas? *</span>
+                    <input type="text" id="nombre-explorador" name="nombre" placeholder="Ej: Sofía" required />
+                </label>
+
+                <label class="campo-arcilla">
+                    <span>3. ¿Cuántos años tienes? *</span>
+                    <select id="edad-explorador" name="edad" required>
+                        <option value="">Elige tu edad...</option>
+                        <option value="6-7">6 a 7 años</option>
+                        <option value="8-9">8 a 9 años</option>
+                        <option value="10-12">10 a 12 años</option>
+                    </select>
+                </label>
+            </fieldset>
+
+            <!-- Selector de Taller Favorito -->
+            <fieldset class="selector-talleres">
+                <legend>4. ¿Qué taller te emociona más?</legend>
+
+                <label class="pildora-taller">
+                    <input type="checkbox" name="talleres" value="Robótica" checked />
+                    <span>🤖 Robótica</span>
+                </label>
+
+                <label class="pildora-taller">
+                    <input type="checkbox" name="talleres" value="Arte 3D" />
+                    <span>🎨 Arte 3D</span>
+                </label>
+
+                <label class="pildora-taller">
+                    <input type="checkbox" name="talleres" value="Videojuegos" />
+                    <span>🕹️ Videojuegos</span>
+                </label>
+
+                <label class="pildora-taller">
+                    <input type="checkbox" name="talleres" value="Ciencia Loca" />
+                    <span>🧪 Ciencia Loca</span>
+                </label>
+            </fieldset>
+
+            <!-- Correo del adulto responsable -->
+            <label class="campo-arcilla">
+                <span>5. Correo de mamá, papá o tutor *</span>
+                <input type="email" id="correo-tutor" name="correo" placeholder="familia@correo.com" required />
+            </label>
+
+            <button type="submit" class="boton-aventura">
+                ✨ ¡EMPEZAR MI AVENTURA! ✨
+            </button>
+        </form>
+    </main>
+
+    <!-- Modal de celebración -->
+    <dialog id="modal-aventura" class="modal-arcilla">
+        <span class="medalla-premio" id="emoji-ganador">🦊</span>
+        <h2>¡Inscripción Lista!</h2>
+        <p id="mensaje-aventura">¡Qué emoción! Ya tienes tu lugar reservado en el campamento.</p>
+        <button type="button" id="boton-lanzar-confeti" class="boton-secundario">🎉 ¡Más confeti!</button>
+        <button type="button" id="cerrar-modal-infantil" class="boton-aventura">¡Genial!</button>
+    </dialog>
+
+    <!-- Librería Canvas Confetti (CDN) + Lógica propia -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="./app_f3.js"></script>
+</body>
+
+</html>

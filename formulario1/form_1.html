@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01 · Formulario Juvenil Cyber-Pop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./style_f1.css" />
+</head>
+
+<body>
+
+    <nav class="barra-superior">
+        <a href="../index.html" class="boton-volver">← Volver a la colección</a>
+        <span class="etiqueta-estilo">01 · NEO-BRUTALISM</span>
+    </nav>
+
+    <main class="contenedor-formulario">
+        <header class="cabecera-form">
+            <span class="insignia-evento">⚡ TORNEO & HACKATHON 2026</span>
+            <h1>Únete al Squad</h1>
+            <p>Crea tu perfil de jugador o creador. Rellena los campos y sube tu barra de energía al 100%.</p>
+
+            <label class="contenedor-progreso" for="barra-energia">
+                <span>Nivel de registro: <strong id="porcentaje-texto">0%</strong></span>
+                <progress id="barra-energia" value="0" max="100">0%</progress>
+            </label>
+        </header>
+
+        <form id="formulario-juvenil" class="formulario-brutal" novalidate>
+            <!-- Fila doble semántica -->
+            <fieldset class="grupo-doble">
+                <label class="campo">
+                    <span>Nickname / Alias *</span>
+                    <input type="text" name="alias" placeholder="Ej: Hago_Carrito" required />
+                </label>
+
+                <label class="campo">
+                    <span>Correo electrónico *</span>
+                    <input type="email" name="correo" placeholder="usuario@gaming.gg" required />
+                </label>
+            </fieldset>
+
+            <!-- Selector de Rol con botones visuales-->
+            <fieldset class="grupo-roles">
+                <legend>Elige tu rol principal *</legend>
+
+                <label class="opcion-rol">
+                    <input type="radio" name="rol" value="gamer" checked />
+                    <span>🎮 Pro Gamer</span>
+                </label>
+
+                <label class="opcion-rol">
+                    <input type="radio" name="rol" value="streamer" />
+                    <span>🎥 Streamer</span>
+                </label>
+
+                <label class="opcion-rol">
+                    <input type="radio" name="rol" value="dev" />
+                    <span>💻 Creative Dev</span>
+                </label>
+            </fieldset>
+
+            <!-- Campo con librería Tagify -->
+            <label class="campo">
+                <span>Tus juegos o tecnologías favoritas (Pulsa Enter)</span>
+                <input id="etiquetas-intereses" name="intereses"
+                    value="Valorant, CSS Art, League of Legends, World of Warcraft" placeholder="Añade etiquetas..." />
+            </label>
+
+            <!-- Checkbox personalizado -->
+            <label class="casilla-terminos">
+                <input type="checkbox" name="terminos" required />
+                <span>Acepto las reglas de la comunidad y el código de conducta.</span>
+            </label>
+
+            <button type="submit" class="boton-enviar">
+                COMPLETAR REGISTRO →
+            </button>
+        </form>
+    </main>
+
+    <!-- Modal nativo HTML5 para confirmación -->
+    <dialog id="modal-exito" class="modal-brutal">
+        <span class="insignia-evento">🔥 ¡LISTO PARA JUGAR!</span>
+        <h2>Registro completado</h2>
+        <p id="mensaje-confirmacion">Tu pase digital ha sido generado con éxito.</p>
+        <button type="button" id="cerrar-modal" class="boton-enviar">GENIAL, CERRAR</button>
+    </dialog>
+
+    <!-- Librería Tagify (JS) + Lógica propia -->
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+    <script src="./app_f1.js"></script>
+</body>
+
+</html>

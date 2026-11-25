@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 · Formulario Corporativo SaaS & B2B</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style_f2.css" />
+</head>
+
+<body>
+
+    <nav class="barra-superior">
+        <a href="../index.html" class="boton-volver">← Volver a la colección</a>
+        <span class="etiqueta-estilo">02 · SAAS & B2B</span>
+    </nav>
+
+    <main class="panel-bento">
+        <!-- Columna izquierda: Propuesta de valor y métricas -->
+        <aside class="columna-info">
+            <header>
+                <span class="insignia-b2b">💼 SOLUCIONES EMPRESARIALES</span>
+                <h1>Impulsa la escala de tu equipo</h1>
+                <p>Agenda una demostración personalizada de 20 minutos con nuestros especialistas en arquitectura cloud.
+                </p>
+            </header>
+
+            <ul class="lista-beneficios">
+                <li><strong>✔ Implementación en 48h</strong> sin interrumpir tus flujos actuales.</li>
+                <li><strong>✔ Seguridad SOC2 & RGPD</strong> con cifrado de extremo a extremo.</li>
+                <li><strong>✔ Soporte dedicado 24/7</strong> con ingeniero asignado.</li>
+            </ul>
+
+            <blockquote class="cita-cliente">
+                <p>"Redujimos nuestros tiempos de despliegue un 64% durante el primer trimestre."</p>
+                <footer>— L. Méndez, CTO en <strong>NexaCloud</strong></footer>
+            </blockquote>
+        </aside>
+
+        <!-- Columna derecha: Formulario con validación en tiempo real -->
+        <section class="columna-formulario">
+            <form id="formulario-empresa" class="formulario-saas" novalidate>
+                <h2>Solicitar demostración</h2>
+                <p class="subtitulo-form">Completa los datos corporativos para recibir tu propuesta.</p>
+
+                <fieldset class="fila-doble">
+                    <label class="campo-grupo">
+                        <span>Nombre completo *</span>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Carlos Mendoza" />
+                    </label>
+
+                    <label class="campo-grupo">
+                        <span>Correo corporativo *</span>
+                        <input type="email" id="correo" name="correo" placeholder="carlos@tuempresa.com" />
+                    </label>
+                </fieldset>
+
+                <fieldset class="fila-doble">
+                    <label class="campo-grupo">
+                        <span>Empresa *</span>
+                        <input type="text" id="empresa" name="empresa" placeholder="Nombre de la organización" />
+                    </label>
+
+                    <label class="campo-grupo">
+                        <span>Tamaño del equipo *</span>
+                        <select id="tamano" name="tamano">
+                            <option value="">Selecciona un rango...</option>
+                            <option value="1-10">1 – 10 empleados</option>
+                            <option value="11-50">11 – 50 empleados</option>
+                            <option value="51-200">51 – 200 empleados</option>
+                            <option value="200+">Más de 200 empleados</option>
+                        </select>
+                    </label>
+                </fieldset>
+
+                <!-- Control deslizante interactivo de presupuesto -->
+                <label class="campo-grupo control-rango" for="presupuesto">
+                    <span class="cabecera-rango">
+                        <span>Presupuesto mensual estimado</span>
+                        <output id="valor-presupuesto" for="presupuesto">2.500 € / mes</output>
+                    </span>
+                    <input type="range" id="presupuesto" name="presupuesto" min="500" max="10000" step="500"
+                        value="2500" />
+                </label>
+
+                <label class="campo-grupo">
+                    <span>¿Qué reto principal buscas resolver?</span>
+                    <textarea id="mensaje" name="mensaje" rows="3"
+                        placeholder="Cuéntanos brevemente sobre tu proyecto o necesidades..."></textarea>
+                </label>
+
+                <label class="casilla-privacidad">
+                    <input type="checkbox" id="privacidad" name="privacidad" />
+                    <span>Acepto la política de privacidad y el tratamiento de datos.</span>
+                </label>
+
+                <button type="submit" class="boton-corporativo">
+                    Agendar Demo Gratuita →
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Modal de confirmación -->
+    <dialog id="modal-empresa" class="modal-saas">
+        <span class="icono-check">✓</span>
+        <h2>Solicitud recibida</h2>
+        <p id="resumen-solicitud">Un consultor se pondrá en contacto contigo en menos de 2 horas laborables.</p>
+        <button type="button" id="cerrar-modal-empresa" class="boton-corporativo">Entendido</button>
+    </dialog>
+
+    <!-- Librería JustValidate (CDN) + Lógica propia -->
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script src="./app_f2.js"></script>
+</body>
+
+</html>
